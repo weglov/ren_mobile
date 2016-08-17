@@ -1,0 +1,34 @@
+.spinner {
+  width: 100%;
+  position: absolute;
+  margin: 1rem auto;
+  text-align: center;
+  
+  > div {
+    width:  1rem;
+    height: 1rem;
+    margin: 0 .3rem;
+    background-color: $spinner-color;
+
+    border-radius: 100%;
+    display: inline-block;
+    animation: bouncedelay $spinner-duration infinite ease-in-out;
+    animation-fill-mode: both;
+
+    &:nth-child(2n) {
+      animation-delay: 0.12s;
+    }
+
+    &:nth-child(3n) {
+      animation-delay: 0.24s;
+    }
+  }
+}
+
+@keyframes bouncedelay {
+  0%, 80%, 100% { 
+    transform: scale(0.0);
+  } 40% { 
+    transform: scale(1.0);
+  }
+}

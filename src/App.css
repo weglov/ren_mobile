@@ -1,13 +1,17 @@
+$orange: #f89c3a;
+$gray: #353535;
+$spinner-duration: 1.2s;
+$spinner-color:    #ffffff;
+/* var */
+@import './components/loader/pulse.css';
+
 body {
     margin: 0;
     font-family: 'PT Sans', sans-serif;
 }
 
 html {
-    font-family: 18px;
-    &.overflow__active {
-        overflow: hidden;
-    }
+    font-size: 16px;
 }
 
 .App {
@@ -33,7 +37,7 @@ html {
         height: 50px;
         vertical-align: middle;
         &.active {
-            background: #353535;
+            background: $gray;
         }
         button {
             outline: none;
@@ -47,11 +51,14 @@ html {
                 font-size: 1.6rem;
             }
         }
-    }
+    }   
     &__search {
         float: right;
         height: 50px;
         vertical-align: middle;
+        &.active {
+            background: $gray;
+        }
         button {
             outline: none;
             border: none;
@@ -83,7 +90,7 @@ html {
         margin: 20px 0 0;
         padding: 0;
         li {
-            list-style:none;
+            list-style: none;
             a {
                 padding: 10px 20px;
                 display: block;
@@ -171,9 +178,9 @@ html {
     display: none;
     overflow: hidden;
     position: relative;
-        &.load {
-            display: block;
-        }
+    &.load {
+        display: block;
+    }
     &__image {
         img {
             width: 100%;
@@ -185,7 +192,7 @@ html {
         position: absolute;
         bottom: 0;
         display: block;
-        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0.8) 100%);
+        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0.8) 100%);
         width: 100%;
         color: #fff;
         padding: 30px 20px 15px;
@@ -193,4 +200,76 @@ html {
         box-sizing: border-box;
         text-align: left;
     }
+}
+
+.r_search {
+    position: fixed;
+    z-index: -1;
+    top: 50px;
+    height: 0;
+    left: 0;
+    visibility: hidden;
+    overflow: auto;
+    width: 100%;
+    padding-bottom: 1rem;
+    -o-transition: opacity .25s ease-out;
+    transition: opacity .25s ease-out;
+    transition: height .25s ease-out;
+    pointer-events: none;
+    opacity: 0;
+    background-color: rgba(53, 53, 53, 0.9);
+    -webkit-overflow-scrolling: touch;
+    &.active {
+        height: 100%;
+        z-index: 299;
+        visibility: visible;
+        pointer-events: auto;
+        opacity: 1;
+    }
+}
+
+.r_search__box {
+    position: relative;
+    top: 0;
+    margin: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    span {
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: #000;
+        padding: 10px;
+        font-size: 1.3rem;
+    }
+    .r_search__input {
+        width: 100%;
+        position: relative;
+        padding: 10px 50px 10px 10px;
+        border: none;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        height: 50px;
+        box-sizing: border-box;
+        &:focus {
+            outline: 2px solid #f1662a;
+        }
+    }
+}
+.n_item__short {
+    text-align: left;
+    display: block;
+    margin: 0px 20px;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px solid #6d6d6d;
+    span {
+        color: $orange;
+        font-style: italic;
+        margin: 0 0px;
+        font-size: .7rem;
+        display: block;
+        }
 }
