@@ -29,7 +29,9 @@ export default class AppHeader extends Component {
     e.preventDefault();
     this.setState({
       menuActive: this.state.menuActive ? '' : 'active', 
-      classburger: this.state.menuActive ? 'ion-navicon' : 'ion-android-close'
+      classburger: this.state.menuActive ? 'ion-navicon' : 'ion-android-close',
+      searchActive: '',
+      classSearch: 'ion-ios-search-strong'
     });
     this.bodyFix();
   }
@@ -41,7 +43,9 @@ export default class AppHeader extends Component {
     e.preventDefault();
     this.setState({
       searchActive: this.state.searchActive ? '' : 'active',
-      classSearch: this.state.searchActive ? 'ion-ios-search-strong' : 'ion-android-close'
+      classSearch: this.state.searchActive ? 'ion-ios-search-strong' : 'ion-android-close',
+      menuActive: '',
+      classburger: 'ion-navicon'
     });
     this.bodyFix();
   }
