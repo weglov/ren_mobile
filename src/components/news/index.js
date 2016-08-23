@@ -10,6 +10,11 @@ export default class NewsPage extends Component {
             data: {}
         }
     }
+    componentWillReceiveProps(nextProps) {
+      this.setState({
+        id: nextProps.params.id
+      })
+    }
     componentWillMount() {
         load('post/' + this.state.id).then((stories) => {
             this.setState({

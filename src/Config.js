@@ -3,6 +3,6 @@ export default {
 	CDN: '//rentv.cdnvideo.ru',
 	SITE: '//ren.tv',
 	URL: {
-		news: 'novosti/p/'
+		news: '/novosti/p/'
 	}
 };
