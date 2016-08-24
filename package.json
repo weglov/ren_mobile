@@ -37,6 +37,7 @@
     "opn": "4.0.2",
     "postcss-cssnext": "^2.7.0",
     "postcss-loader": "0.9.1",
+    "postcss-sorting": "^1.6.1",
     "precss": "^1.4.0",
     "promise": "7.1.1",
     "rimraf": "2.5.4",
