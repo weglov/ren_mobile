@@ -33,11 +33,11 @@ export default class AppHeader extends Component {
       searchActive: '',
       classSearch: 'ion-ios-search-strong'
     });
-    this.bodyFix();
+    this.bodyFix(this.state.menuActive ? false : true);
   }
-  bodyFix = () => {
+  bodyFix = (e) => {
     let root = document.documentElement;
-    root.style.overflow = (root.style.overflow === 'hidden') ? '' : 'hidden';
+    root.style.overflow = e ? 'hidden' : '';
   }
   showSearch = (e) => {
     e.preventDefault();
@@ -47,7 +47,7 @@ export default class AppHeader extends Component {
       menuActive: '',
       classburger: 'ion-navicon'
     });
-    this.bodyFix();
+    this.bodyFix(this.state.searchActive ? false : true);
   }
   render() {
     return (
