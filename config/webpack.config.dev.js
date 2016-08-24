@@ -5,6 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 var paths = require('./paths');
 var precss = require('precss');
+var sorting = require('postcss-sorting');
 
 
 module.exports = {
@@ -89,7 +90,7 @@ module.exports = {
     useEslintrc: false
   },
   postcss: function() {
-    return [autoprefixer, precss];
+    return [autoprefixer, precss, sorting];
   },
   plugins: [
     new HtmlWebpackPlugin({
