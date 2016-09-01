@@ -21,9 +21,7 @@ export default class AppHeader extends Component {
       searchActive: '',
       classSearch: 'ion-ios-search-strong'
     });
-    let root = document.documentElement;
-    root.style.overflow = '';
-
+    this.bodyFix(false);
   }
   showMenu = (e) => {
     e.preventDefault();
