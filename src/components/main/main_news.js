@@ -18,6 +18,7 @@ export default class MainNews extends Component {
                 throbber: data.status
             });
         });
+        
     }
   render() { 
     let Class = this.props.display ? this.props.display : 'n_item' ;

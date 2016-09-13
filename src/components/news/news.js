@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
-import { load } from '../../Api';
 import NewsList from './news_list';
 
 export default class News extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: ''
         }
     }
     componentWillMount() {
-        load('kit/2').then((stories) => {
-            this.setState({
-                data: stories.data
-            });
-        });
+
     }
     render() {
-        return ( <div className="n_wrap" >
-            <NewsList display={"n_item"} data={this.state.data}/>
+        var data = this.props.data.kit;
+        if (this.props.load) {
+            return ( <div className="n_wrap" >
+            <NewsList display={"--image"} data={data[2]}/>
+            <NewsList display={"--image"} data={data[3]}/>
+            <NewsList display={"--row"} data={data[4]}/>
             </div>
-        );
+            );  
+        } else {
+            return null
+        }
+        
     }
 }

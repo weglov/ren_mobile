@@ -13,7 +13,7 @@ body {
 html {
     font-size: 16px;
 }
-
+<div class="h_header__burger ">…</div>
 .App {
     text-align: center;
 }
@@ -27,13 +27,14 @@ html {
         display: inline-block;
         height: 50px;
         padding: 5px;
+        margin: 0 10px;
         box-sizing: border-box;
         img {
             height: 40px;
         }
     }
     &__burger {
-        float: left;
+        float: right;
         height: 50px;
         width: 50px;
         vertical-align: middle;

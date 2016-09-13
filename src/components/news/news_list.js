@@ -7,7 +7,7 @@ export default class NewsList extends Component {
       return (<NewsItem display={this.props.display} key={i} data={nodes}></NewsItem>);
     });
     return (
-      <div className="n_list">
+      <div className={"n_list n_list" + this.props.display}>
         {nodes}
       </div>
     );
