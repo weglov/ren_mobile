@@ -9,13 +9,20 @@ export default class NewsItem extends Component {
     let data = this.props.data;
     moment.locale('ru');
     let created = moment(data.created*1000).fromNow();
-    let image = data.image['200x115'].replace(Config.CDN,Config.SITE)
-    return (
-      <Link className={Class +' '+Class+this.props.display} to={Config.URL.news + data.id} activeClassName='active'>
-      <div className={Class + "__image"}><img src={image} alt={data.title} title={data.description}/></div>
-      <div className={Class + "__title"}>{data.title}<span className={Class+"__created"}>{created}</span></div>
-      </Link>
-    );
+    let url_image = data.image['200x115'].replace(Config.CDN,Config.SITE);
+    let el = Class + ' ' + Class + this.props.display + ' el'+ this.props.id;
+    let image = this.props.display !== '--row' ? (<div className={Class + "__image"}>
+          <img src={url_image} alt={data.title} title={data.description}/>
+        </div>) : null
+      return (
+        <Link className={el} to={Config.URL.news + data.id} activeClassName='active'>
+          {image}
+          <div className={Class + "__title"}>
+            {data.title}
+            <span className={Class+"__created"}>{created}</span>
+          </div>
+        </Link>
+      );
   }
 }
 

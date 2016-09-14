@@ -140,7 +140,7 @@ html {
 
 .n_list {
     background: #f0f0f0;
-    padding: 10px;
+    padding: 0 10px;
     position: relative;
     box-sizing: border-box;
 }
@@ -275,4 +275,56 @@ html {
         font-size: .7rem;
         display: block;
         }
+}
+.n_list__main {
+    .n_item  {
+        &.el3, &.el4, &.el5, &.el6 {
+            .n_item__image {
+                display: none;
+            }
+        }   
+        &.el7, &.el8 {
+            display: none;
+        }
+    }
+    
+}
+.n_list__table {
+    display: table;
+    margin: 0px 0 0;
+    padding: 0 10px;
+    .n_item  {
+        &--cell {
+            display: table-cell;
+            width: 50%;
+            padding: 10px;
+        }
+        &:nth-child(2n) {
+            border-left:1px solid #d8d8d8;
+        }
+        &__image {
+            display: block;
+            width: 100%;
+        }
+    }
+    
+}
+
+.n_main--wrap {
+    padding: 10px 0;
+    background: #f0f0f0;
+}
+.n_list__block {
+    h2 {
+        margin: 0 10px;
+        padding: 0;
+        border-bottom: 2px solid $orange;
+        span {
+            background: $orange;
+            padding: 0 5px;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+    }
 }
