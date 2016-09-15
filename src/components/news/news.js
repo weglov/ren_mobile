@@ -19,9 +19,9 @@ export default class News extends Component {
                     <NewsItem display={"--cell"} id={0} type={'main'} data={data[2][7]}></NewsItem>
                     <NewsItem display={"--cell"} id={1} type={'main'} data={data[2][8]}></NewsItem>
                 </div>
-            <NewsList display={"--image"} data={data[3]}/>
+            <NewsList display={"--image"} type={'main--2'} data={data[3]}/>
             <NewsList display={"--row"} data={data[4]}/>
-            <NewsBlock data={'home/last?limit=3:7&order=id:desc'} display={"--row"} title={'Все новости'}/>
+            <NewsBlock data={'home/last'} display={"--row"} title={'Все новости'}/>
             </div>
             
             );  
