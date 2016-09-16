@@ -5,6 +5,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var url = require('url');
 var paths = require('./paths');
+var precss = require('precss');
+var sorting = require('postcss-sorting');
 
 var homepagePath = require(paths.appPackageJson).homepage;
 var publicPath = homepagePath ? url.parse(homepagePath).pathname : '/';
@@ -98,7 +100,7 @@ module.exports = {
     useEslintrc: false
   },
   postcss: function() {
-    return [autoprefixer];
+    return [autoprefixer, precss, sorting];
   },
   plugins: [
     new HtmlWebpackPlugin({

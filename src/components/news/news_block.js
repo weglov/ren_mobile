@@ -10,7 +10,7 @@ export default class News extends Component {
             data: '',
             throbber: false,
             limit: 0,
-            size: 7
+            size: this.props.limit ? this.props.limit : 7
         }
     }
     componentDidMount() {
@@ -29,7 +29,6 @@ export default class News extends Component {
         });
         load(this.props.data+'?limit='+ limit + ':'+ this.state.size +'&order=created:asc').then((e) => {
             var base = [...this.state.data, ...e.data];
-            console.log(limit);
             this.setState({
                 data: base,
                 throbber: true,

@@ -11,7 +11,7 @@ body {
     // margin: 0 auto;
     // background: #d7d7d7;
     // width: 370px;
-    margin: 0;
+    // margin: 0;
     text-align: left;
     font-family: 'Arial', sans-serif;
 }
@@ -23,9 +23,9 @@ html {
 .App {
     text-align: center;
 }
-.h_header__container {
 
-}
+.h_header__container {}
+
 .h_header {
     background-color: #353535;
     height: 50px;
@@ -48,6 +48,7 @@ html {
         float: right;
         height: 50px;
         width: 50px;
+        cursor: pointer;
         vertical-align: middle;
         &.active {
             background: #252525;
@@ -61,14 +62,14 @@ html {
             height: 50px;
             background: transparent;
             &.i__burger {
-                background: url(/static/media/sprite.png) no-repeat;
+                background: url(./image/sprite.svg) no-repeat;
                 background-position: -165px -6px;
                 background-size: 400px auto;
                 font-size: 1.6rem;
                 width: 100%;
             }
             &.i__close {
-                background: url(/static/media/sprite.png) no-repeat;
+                background: url(./image/sprite.svg) no-repeat;
                 background-position: -211px -5px;
                 background-size: 400px auto;
                 font-size: 1.6rem;
@@ -93,7 +94,7 @@ html {
             height: 50px;
             background: transparent;
             &.i__play {
-                background: url(/static/media/sprite.png) no-repeat;
+                background: url(./image/sprite.svg) no-repeat;
                 background-position: -115px -6px;
                 background-size: 400px auto;
                 font-size: 1.6rem;
@@ -113,6 +114,7 @@ html {
     color: #fff;
     transition: top .3s ease-out;
     text-align: left;
+    padding-bottom: 0;
     &.active {
         top: 50px;
     }
@@ -161,8 +163,11 @@ html {
 
 .n_article {
     text-align: left;
+    background: #fff;
     position: relative;
     padding: 0 10px;
+    font-size: 1.3rem;
+    line-height: 1.3;
     h1 {
         padding: 1rem 0 0;
         margin: 0;
@@ -176,6 +181,10 @@ html {
         margin: 1rem 0;
         font-size: 1.3rem;
     }
+    p {
+        margin: 0 0 1.5rem;
+        line-height: 1.5;
+    }
     iframe {
         width: 100%;
         min-height: 255px;
@@ -186,8 +195,68 @@ html {
             height: auto;
         }
     }
+    &__data {
+        width: 100%;
+        display: table;
+        font-size: 1rem;
+        overflow: hidden;
+        color: #777777;
+        &--create {
+            display: table-cell;
+            vertical-align: top;
+        }
+        &--view {
+            display: table-cell;
+            box-sizing: border-box;
+            padding-left: 30px;
+            width: 20%;
+            overflow: hidden;
+            box-sizing: border-box;
+            position: relative;
+            vertical-align: top;
+            &:before {
+                content: " ";
+                width: 20px;
+                position: absolute;
+                left: 0;
+                top:0;
+                height: 20px;
+                display: block;
+                background: url(./image/sprite.svg) no-repeat;
+                    background-position: -138px -67px;
+                background-size: 400px auto;
+            }
+        }
+    }
+    .n_list__block {
+        margin: 0 -10px;
+    }
+    &__tags {
+        color: #555555;
+        font-size: 1.3rem;
+        &--name {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+        &--list {
+            display: inline;
+            li {
+                display: inline-block;
+                margin: 5px 1rem 5px 0;
+                padding: 5px 8px;
+                border-radius: 5px;
+                background: #dddddd;
+                background: 
+            }
+        }
+    }
     &__image {
         margin: 10px -10px;
+        &--alt {
+           font-size: 1rem; 
+           color: #777777;
+           padding: 0 10px;
+        }
         img {
             width: 100%;
             height: auto;
@@ -226,13 +295,14 @@ html {
 }
 
 .r_search {
-    position: fixed;
+    position: relative;
     z-index: -1;
-    top: 50px;
+    top: 0px;
     height: 0;
+    padding: 10px;
+    box-sizing: border-box;
     left: 0;
     visibility: hidden;
-    overflow: auto;
     width: 100%;
     padding-bottom: 1rem;
     -o-transition: opacity .25s ease-out;
@@ -240,11 +310,10 @@ html {
     transition: height .25s ease-out;
     pointer-events: none;
     opacity: 0;
-    background-color: rgba(53, 53, 53, 0.9);
     -webkit-overflow-scrolling: touch;
     &.active {
         height: 100%;
-        z-index: 299;
+        z-index: 20;
         visibility: visible;
         pointer-events: auto;
         opacity: 1;
@@ -268,15 +337,19 @@ html {
     }
     .r_search__input {
         width: 100%;
+        color: #fff;
         position: relative;
         padding: 10px 50px 10px 10px;
         border: none;
         font-size: 1.1rem;
+        background: #353535;
         margin-bottom: 10px;
-        height: 50px;
+        border-radius: 5px;
         box-sizing: border-box;
+        border: 1px solid #555555;
+        outline: none;
         &:focus {
-            outline: 2px solid #f1662a;
+            border: 1px solid #f1662a;
         }
     }
 }
@@ -284,7 +357,7 @@ html {
 .n_item__short {
     text-align: left;
     display: block;
-    margin: 0px 20px;
+    margin: 0px 0px;
     padding: 10px 0;
     text-decoration: none;
     color: #fff;
@@ -407,36 +480,37 @@ html {
             padding-left: 27px;
             font-size: 1.2rem;
             border-bottom: 1px solid #353535;
-            &.n_item--9, &.n_item--10 {
+            &.n_item--9,
+            &.n_item--10 {
                 border-bottom: none;
             }
-                &.n_item--3:before {
-                    background-position: -21px -50px;
-                }
-                &.n_item--2:before {
-                    background-position: -68px -15px;
-                }
-                &.n_item--4:before {
-                    background-position: -68px -50px;
-                }
-                &.n_item--5:before {
-                    background-position: -21px -86px;
-                }
-                &.n_item--6:before {
-                    background-position: -68px -86px;
-                }
-                &.n_item--7:before {
-                    background-position: -21px -124px;
-                }
-                &.n_item--8:before {
-                    background-position: -68px -125px;
-                }
-                &.n_item--9:before {
-                    background-position: -68px -123px;
-                }
-                &.n_item--10:before {
-                    background-position: -21px -157px;
-                }
+            &.n_item--3:before {
+                background-position: -21px -50px;
+            }
+            &.n_item--2:before {
+                background-position: -68px -15px;
+            }
+            &.n_item--4:before {
+                background-position: -68px -50px;
+            }
+            &.n_item--5:before {
+                background-position: -21px -86px;
+            }
+            &.n_item--6:before {
+                background-position: -68px -86px;
+            }
+            &.n_item--7:before {
+                background-position: -21px -124px;
+            }
+            &.n_item--8:before {
+                background-position: -68px -125px;
+            }
+            &.n_item--9:before {
+                background-position: -68px -123px;
+            }
+            &.n_item--10:before {
+                background-position: -21px -157px;
+            }
             &:before {
                 content: " ";
                 height: 25px;
@@ -446,8 +520,7 @@ html {
                 position: absolute;
                 left: 0;
                 top: 6px;
-                background: url(./image/sprite.png) no-repeat;
-                
+                background: url(./image/sprite.svg) no-repeat;
             }
         }
     }
@@ -468,11 +541,10 @@ html {
         margin: 0 0 10px;
         padding: 10px 5px 0;
         ul {
-          display: flex;
-          align-items: center;  
-          justify-content: space-between;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        
         li {
             display: inline-block;
             margin: 0 5px;
@@ -480,7 +552,7 @@ html {
                 display: block;
                 width: 34px;
                 height: 34px;
-                background: url(/static/media/sprite.png) no-repeat;
+                background: url(./image/sprite.svg) no-repeat;
                 background-position: -24px -208px;
                 background-size: 400px auto;
                 &.n_footer__social--fb {
@@ -520,7 +592,7 @@ html {
             display: block;
             width: 20px;
             height: 20px;
-            background: url(/static/media/sprite.png) no-repeat;
+            background: url(./image/sprite.svg) no-repeat;
             background-position: -181px -66px;
             background-size: 400px auto;
             content: "";
@@ -543,4 +615,36 @@ html {
     }
 }
 
+.n_article iframe.ren-player {
+    margin: 0 -10px;
+    display: none;
+    width: 100vw;
+}
+.n_social {
+    button {
+            display: inline-block;
+            width: 42px;
+            cursor: pointer;
+            margin-right: 10px;
+            height: 42px;
+            text-indent: -99999999999px;
+            border: none;
+            outline: none;
+            background: url(./image/sprite.svg) no-repeat;
+            background-position: -111px -147px;
+            background-size: 400px auto;
+            content: "";
+            text-indent: -99999999999px;
+            padding: 0;
+            &.n_social--fb {
+                 background-position: -161px -147px;
+            }
+            &.n_social--tw {
+                 background-position: -211px -147px;
+            }
+            &.n_social--mail {
+                 background-position: -261px -147px;
+            }
+    }
+}
 @import './style/footer.css';

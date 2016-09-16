@@ -4,5 +4,6 @@ export default {
 	SITE: '//ren.tv',
 	URL: {
 		news: '/novosti/p/'
-	}
+	},
+	appId: '1469802533285677'
 };

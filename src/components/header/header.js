@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.png';
 import Menu from '../menu/menu';
 import { Link } from 'react-router';
+import Search from '../search/search_box';
 
 export default class AppHeader extends Component {
   constructor(props) {
@@ -20,7 +21,6 @@ export default class AppHeader extends Component {
       playActive: '',
       classPlay: 'i__play'
     });
-    this.bodyFix(false);
   }
   showMenu = (e) => {
     e.preventDefault();
@@ -30,11 +30,6 @@ export default class AppHeader extends Component {
       playActive: '',
       classPlay: 'i__play'
     });
-    this.bodyFix(this.state.menuActive ? false : true);
-  }
-  bodyFix = (e) => {
-    // let root = document.documentElement;
-    // root.style.overflow = e ? 'hidden' : '';
   }
   showPlay = (e) => {
     e.preventDefault();
@@ -44,7 +39,6 @@ export default class AppHeader extends Component {
       menuActive: '',
       classburger: 'i__burger'
     });
-    this.bodyFix(this.state.playActive ? false : true);
   }
   render() {
     return (
@@ -56,7 +50,10 @@ export default class AppHeader extends Component {
           <div className={"h_header__burger " + this.state.menuActive}><button onClick={this.showMenu}  className={this.state.classburger}></button></div>
           <div className={"h_header__play " + this.state.playActive}><button className={this.state.classPlay} onClick={this.showPlay}></button></div>
         </div>
-        <Menu ref="menu" style={"r_menu"} display={this.state.menuActive} />
+        <div className={this.state.menuActive + " r_menu"}>
+          <Search display={this.state.menuActive} />
+          <Menu ref="menu" style={" "} display={this.state.menuActive} />
+        </div>
       </div>
     );
   }
