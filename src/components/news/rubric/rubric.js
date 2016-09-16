@@ -13,7 +13,7 @@ export default class RubricPage extends Component {
         }
     }
     loadData = (i) => {
-        let post = load('post').then((ok) => {
+        let post = load('post?category='+i).then((ok) => {
             return ok;
         })
         let name = load('category/' + i).then((ok) => {

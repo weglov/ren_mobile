@@ -616,11 +616,12 @@ html {
 }
 
 .n_article iframe.ren-player {
-    margin: 0 -10px;
-    display: none;
-    width: 100vw;
+    margin: 0;
+    // display: none;
+    width: 100%;
 }
 .n_social {
+    margin-bottom: 10px;
     button {
             display: inline-block;
             width: 42px;
