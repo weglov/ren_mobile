@@ -5,9 +5,14 @@ $spinner-color: #ffffff;
 
 /* var */
 
+@import './style/reset.css';
 @import './components/loader/pulse.css';
 body {
+    // margin: 0 auto;
+    // background: #d7d7d7;
+    // width: 370px;
     margin: 0;
+    text-align: left;
     font-family: 'Arial', sans-serif;
 }
 
@@ -15,19 +20,24 @@ html {
     font-size: 14px;
 }
 
-<div class="h_header__burger ">…</div> .App {
+.App {
     text-align: center;
 }
+.h_header__container {
 
+}
 .h_header {
     background-color: #353535;
     height: 50px;
     box-sizing: border-box;
     color: white;
+    z-index: 20;
+    position: relative;
     &__logo {
         display: inline-block;
         height: 50px;
         padding: 5px;
+        float: left;
         margin: 0 10px;
         box-sizing: border-box;
         img {
@@ -40,7 +50,7 @@ html {
         width: 50px;
         vertical-align: middle;
         &.active {
-            background: $gray;
+            background: #252525;
         }
         button {
             outline: none;
@@ -50,12 +60,23 @@ html {
             font-size: 2rem;
             height: 50px;
             background: transparent;
-            &.ion-close {
+            &.i__burger {
+                background: url(/static/media/sprite.png) no-repeat;
+                background-position: -165px -6px;
+                background-size: 400px auto;
                 font-size: 1.6rem;
+                width: 100%;
+            }
+            &.i__close {
+                background: url(/static/media/sprite.png) no-repeat;
+                background-position: -211px -5px;
+                background-size: 400px auto;
+                font-size: 1.6rem;
+                width: 100%;
             }
         }
     }
-    &__search {
+    &__play {
         float: right;
         height: 50px;
         width: 50px;
@@ -71,38 +92,29 @@ html {
             font-size: 2rem;
             height: 50px;
             background: transparent;
+            &.i__play {
+                background: url(/static/media/sprite.png) no-repeat;
+                background-position: -115px -6px;
+                background-size: 400px auto;
+                font-size: 1.6rem;
+                width: 100%;
+            }
         }
     }
 }
 
 .r_menu {
+    z-index: 5;
     position: absolute;
     display: block;
-    height: 100%;
-    left: -100%;
+    top: -500px;
     width: 100%;
-    background: #353535;
+    background: #252525;
     color: #fff;
-    z-index: 200;
-    top: 50px;
-    transition: left .3s ease-out;
+    transition: top .3s ease-out;
     text-align: left;
     &.active {
-        left: 0;
-    }
-    ul {
-        margin: 20px 0 0;
-        padding: 0;
-        li {
-            list-style: none;
-            a {
-                padding: 10px 20px;
-                display: block;
-                color: #fff;
-                text-decoration: none;
-                font-size: 1.3rem;
-            }
-        }
+        top: 50px;
     }
 }
 
@@ -152,13 +164,17 @@ html {
     position: relative;
     padding: 0 10px;
     h1 {
-        padding: 1rem 0 .5rem;
+        padding: 1rem 0 0;
         margin: 0;
-        font-size: 1.5rem;
+        line-height: 1.3;
+        font-weight: bold;
+        font-size: 1.7rem;
     }
     &__desc {
-        font-style: italic;
-        color: #333;
+        font-weight: bold;
+        line-height: 1.3;
+        margin: 1rem 0;
+        font-size: 1.3rem;
     }
     iframe {
         width: 100%;
@@ -330,7 +346,8 @@ html {
 }
 
 .n_main--wrap {
-    padding: 10px 0;
+    padding: 10px 0 0;
+    text-align: left;
     background: #fff;
 }
 
@@ -338,6 +355,7 @@ html {
     h2 {
         margin: 0 10px;
         padding: 0;
+        text-align: left;
         border-bottom: 2px solid $orange;
         span {
             background: $orange;
@@ -353,14 +371,176 @@ html {
     }
 }
 
-
 .n_button {
-    border: 1px solid $gray;
-    background: #fff;
-    display: block;
-    text-align: center;
-    padding: 5px;
-    width: auto;
-    margin: 10px;
-    box-sizing: border-box;
+    padding: 10px;
+    &--input {
+        border: 1px solid #bcbcbc;
+        background: #fff;
+        display: block;
+        outline: none;
+        text-align: center;
+        padding: 7px;
+        font-size: 1.2rem;
+        width: 100%;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
 }
+
+.n__menu {
+    padding: 10px 0;
+    border-bottom: 1px solid #353535;
+    li {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+        a {
+            margin: 0 10px;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 0;
+            display: block;
+            position: relative;
+            padding-left: 27px;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #353535;
+            &.n_item--9, &.n_item--10 {
+                border-bottom: none;
+            }
+                &.n_item--3:before {
+                    background-position: -21px -50px;
+                }
+                &.n_item--2:before {
+                    background-position: -68px -15px;
+                }
+                &.n_item--4:before {
+                    background-position: -68px -50px;
+                }
+                &.n_item--5:before {
+                    background-position: -21px -86px;
+                }
+                &.n_item--6:before {
+                    background-position: -68px -86px;
+                }
+                &.n_item--7:before {
+                    background-position: -21px -124px;
+                }
+                &.n_item--8:before {
+                    background-position: -68px -125px;
+                }
+                &.n_item--9:before {
+                    background-position: -68px -123px;
+                }
+                &.n_item--10:before {
+                    background-position: -21px -157px;
+                }
+            &:before {
+                content: " ";
+                height: 25px;
+                width: 25px;
+                background-size: 400px auto;
+                background-position: -21px -15px;
+                position: absolute;
+                left: 0;
+                top: 6px;
+                background: url(./image/sprite.png) no-repeat;
+                
+            }
+        }
+    }
+}
+
+.n_footer {
+    background: #252525;
+    box-sizing: border-box;
+    padding: 0;
+    text-align: left;
+    display: block;
+    position: relative;
+    &__menu {
+        padding: 10px 0;
+        border-bottom: 1px solid #353535;
+    }
+    &__social {
+        margin: 0 0 10px;
+        padding: 10px 5px 0;
+        ul {
+          display: flex;
+          align-items: center;  
+          justify-content: space-between;
+        }
+        
+        li {
+            display: inline-block;
+            margin: 0 5px;
+            a {
+                display: block;
+                width: 34px;
+                height: 34px;
+                background: url(/static/media/sprite.png) no-repeat;
+                background-position: -24px -208px;
+                background-size: 400px auto;
+                &.n_footer__social--fb {
+                    background-position: -68px -208px;
+                }
+                &.n_footer__social--tw {
+                    background-position: -112px -208px;
+                }
+                &.n_footer__social--yb {
+                    background-position: -156px -208px;
+                }
+                &.n_footer__social--ins {
+                    background-position: -200px -208px;
+                }
+                &.n_footer__social--ok {
+                    background-position: -245px -208px;
+                }
+                &.n_footer__social--gp {
+                    background-position: -288px -208px;
+                }
+            }
+        }
+    }
+    &__godescktop a {
+        display: block;
+        padding: 15px 10px;
+        text-decoration: none;
+        color: #bbbbbb;
+        padding-left: 40px;
+        position: relative;
+        border-top: 1px solid #353535;
+        border-bottom: 1px solid #353535;
+        &:before {
+            position: absolute;
+            top: 11px;
+            left: 10px;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: url(/static/media/sprite.png) no-repeat;
+            background-position: -181px -66px;
+            background-size: 400px auto;
+            content: "";
+        }
+    }
+    &__copy {
+        padding: 15px 10px;
+        color: #bbbbbb;
+        span,
+        div,
+        a {
+            display: inline-block;
+        }
+        div {
+            margin: 0 10px;
+        }
+        a {
+            color: #bbbbbb;
+        }
+    }
+}
+
+@import './style/footer.css';
