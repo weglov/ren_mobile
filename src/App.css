@@ -648,3 +648,15 @@ html {
     }
 }
 @import './style/footer.css';
+
+
+.r_rubric {
+    h1 {
+        font-size: 2rem;
+        margin: 1rem;
+        font-weight: bold;  
+    }
+    .n_item__title {
+        font-weight: bold;
+    }
+}

@@ -36,7 +36,7 @@ export default class NewsPage extends Component {
     	let data = this.state.data;
     	let image = this.state.data.image ? data.image['540x305'].replace(Config.CDN,Config.SITE) : '';
         let tags = data.tag_list ? Object.keys(data.tag_list) : '';
-        tags = tags ? tags.map((nodes,i) => <li>{data.tag_list[nodes]}</li>) : ''
+        tags = tags ? tags.map((nodes,i) => <li key={i}>{data.tag_list[nodes]}</li>) : ''
       return (
         <div className='n_article'>
         <h1>{data.title}</h1>
@@ -47,7 +47,7 @@ export default class NewsPage extends Component {
         </div>
         <div className="n_article__image">
         <img src={image} alt={data.title} title={data.description}/>
-        {data.image_alt ? <span className="n_article__image--alt">data.image_alt</span> : ""}
+        {data.image_alt ? <span className="n_article__image--alt">{data.image_alt}</span> : ""}
         </div>
         <Social />
         <div dangerouslySetInnerHTML={{__html: data.content }} className='n_article__content'/>

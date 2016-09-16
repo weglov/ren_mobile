@@ -5,12 +5,14 @@ import { Route, IndexRoute } from 'react-router'
 import App from './App';
 import NotFound from './components/notfound/NotFound';
 import NewsPage from './components/news/index';
+import RubricPage from './components/news/rubric/rubric';
 import Main from './components/main/index';
 
 export const routes = (
-	<Route  path="/" component={App}>
+	<Route path="/" component={App} >
     	<IndexRoute component={Main} />
-    	<Route path="novosti/p/:id" component={NewsPage}/>
+    	<Route path="novosti/p/:id" component={NewsPage} />
+    	<Route path="novosti/r/:id" component={RubricPage} />
     	<Route path="*" component={NotFound}/>
     </Route>
 )

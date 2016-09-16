@@ -4,6 +4,9 @@ import Footer from './components/footer/footer';
 import './App.css';
 
 class App extends Component {
+  componentWillReceiveProps(nextProps) {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div className="App">
