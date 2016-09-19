@@ -11,7 +11,7 @@ export default class NewsPage extends Component {
         this.state = {
             id: this.props.params.id,
             data: {},
-            date: ''
+            date:  null
         }
     }
 

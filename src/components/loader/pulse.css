@@ -3,13 +3,16 @@
   position: absolute;
   margin: 1rem auto;
   text-align: center;
-  
+  &.r_loader__black {
+    > div {
+      background-color: $gray;
+    }
+  }
   > div {
     width:  1rem;
     height: 1rem;
     margin: 0 .3rem;
     background-color: $spinner-color;
-
     border-radius: 100%;
     display: inline-block;
     animation: bouncedelay $spinner-duration infinite ease-in-out;

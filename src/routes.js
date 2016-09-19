@@ -6,6 +6,7 @@ import App from './App';
 import NotFound from './components/notfound/NotFound';
 import NewsPage from './components/news/index';
 import RubricPage from './components/news/rubric/rubric';
+import Live from './components/live/live';
 import Main from './components/main/index';
 
 export const routes = (
@@ -13,6 +14,7 @@ export const routes = (
     	<IndexRoute component={Main} />
     	<Route path="novosti/p/:id" component={NewsPage} />
     	<Route path="novosti/r/:id" component={RubricPage} />
+    	<Route path="live" component={Live} />
     	<Route path="*" component={NotFound}/>
     </Route>
 )

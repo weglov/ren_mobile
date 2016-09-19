@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import NewsList from '../news_list';
 import { load } from '../../../Api';
-
+import Loader from '../../loader/load';
 
 export default class RubricPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: '',
-            title: '',
-            throbber: false
+            data: null,
+            title: null,
+            throbber: true
         }
     }
     loadData = (i) => {
@@ -22,11 +22,12 @@ export default class RubricPage extends Component {
         Promise.all([post, name]).then((e) => {
             this.setState({
                 data: e[0].data,
+                throbber: false,
                 title: e[1].data[0].name
             });
         })
     }
-    componentWillMount() {
+    componentDidMount() {
         this.loadData(this.props.params.id)
     }
     componentWillReceiveProps(nextProps) {
@@ -35,7 +36,7 @@ export default class RubricPage extends Component {
       }
     }
     render() {
-        if (this.state.data) {
+        if (!this.state.throbber) {
           return (
             <div className="r_rubric">
                 <h1>{this.state.title}</h1>
@@ -44,7 +45,7 @@ export default class RubricPage extends Component {
             );  
         } else {
             return (
-                <h1>Загрузка</h1>
+                <Loader show="true" color="black"/>
                 )
         }
         

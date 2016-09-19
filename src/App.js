@@ -3,6 +3,7 @@ import AppHeader from './components/header/header';
 import Footer from './components/footer/footer';
 import './App.css';
 
+
 class App extends Component {
   componentWillReceiveProps(nextProps) {
     window.scrollTo(0, 0);

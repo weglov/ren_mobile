@@ -33,12 +33,6 @@ export default class AppHeader extends Component {
   }
   showPlay = (e) => {
     e.preventDefault();
-    this.setState({
-      playActive: this.state.playActive ? '' : 'active',
-      classPlay: this.state.playActive ? 'i__play' : 'i__close',
-      menuActive: '',
-      classburger: 'i__burger'
-    });
   }
   render() {
     return (
@@ -48,7 +42,7 @@ export default class AppHeader extends Component {
           <img src={logo} alt="logo" />
           </Link>
           <div className={"h_header__burger " + this.state.menuActive}><button onClick={this.showMenu}  className={this.state.classburger}></button></div>
-          <div className={"h_header__play " + this.state.playActive}><button className={this.state.classPlay} onClick={this.showPlay}></button></div>
+          <div className={"h_header__play " + this.state.playActive}><Link to='/live' className={this.state.classPlay}></Link></div>
         </div>
         <div className={this.state.menuActive + " r_menu"}>
           <Search display={this.state.menuActive} />
