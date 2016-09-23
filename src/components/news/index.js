@@ -4,6 +4,7 @@ import { load } from '../../Api';
 import moment from 'moment';
 import Social from "./social";
 import NewsBlock from './news_block';
+import { Link } from 'react-router';
 
 export default class NewsPage extends Component {
 	constructor(props) {
@@ -36,7 +37,7 @@ export default class NewsPage extends Component {
     	let data = this.state.data;
     	let image = this.state.data.image ? data.image['540x305'].replace(Config.CDN,Config.SITE) : '';
         let tags = data.tag_list ? Object.keys(data.tag_list) : '';
-        tags = tags ? tags.map((nodes,i) => <li key={i}>{data.tag_list[nodes]}</li>) : ''
+        tags = tags ? tags.map((nodes,i) => <li key={i}><Link to={'/novosti/t/' + tags[i]}>{data.tag_list[nodes]}</Link></li>) : ''
       return (
         <div className='n_article'>
         <h1>{data.title}</h1>

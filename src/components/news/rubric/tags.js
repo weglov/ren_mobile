@@ -3,7 +3,7 @@ import NewsList from '../news_list';
 import { load } from '../../../Api';
 import Loader from '../../loader/load';
 
-export default class RubricPage extends Component {
+export default class TagsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,11 +13,11 @@ export default class RubricPage extends Component {
         }
     }
     loadData = (i) => {
-        load('category/' + i).then((e) => {
+        load('tag/' + i).then((e) => {
             this.setState({
                 data: e.data,
                 throbber: false,
-                title: e.data[0].category.name
+                title: e.data[0].tag_list[i]
             });
         })
     }
@@ -33,7 +33,7 @@ export default class RubricPage extends Component {
         if (!this.state.throbber) {
           return (
             <div className="r_rubric">
-                <h1>{this.state.title}</h1>
+                <h1>Тег: {this.state.title}</h1>
                 <NewsList display={"--image"} data={this.state.data}/>
             </div>
             );  

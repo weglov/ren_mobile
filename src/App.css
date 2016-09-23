@@ -249,7 +249,11 @@ html {
                 padding: 5px 8px;
                 border-radius: 5px;
                 background: #dddddd;
-                background: 
+                a {
+                   color: #555555;
+                   font-size: 1.3rem;
+                   text-decoration: none;
+                }
             }
         }
     }
