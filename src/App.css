@@ -62,14 +62,14 @@ html {
             height: 50px;
             background: transparent;
             &.i__burger {
-                background: url(./image/sprite.svg) no-repeat;
+                background: url(./image/sprite2.svg) no-repeat;
                 background-position: -165px -6px;
                 background-size: 400px auto;
                 font-size: 1.6rem;
                 width: 100%;
             }
             &.i__close {
-                background: url(./image/sprite.svg) no-repeat;
+                background: url(./image/sprite2.svg) no-repeat;
                 background-position: -211px -5px;
                 background-size: 400px auto;
                 font-size: 1.6rem;
@@ -97,8 +97,8 @@ html {
             height: 50px;
             background: transparent;
             &.i__play {
-                background: url(./image/sprite.svg) no-repeat;
-                background-position: -115px -6px;
+                background: url(./image/sprite2.svg) no-repeat;
+                background-position: -117px -7px;
                 background-size: 400px auto;
                 font-size: 1.6rem;
                 width: 100%;
@@ -225,7 +225,7 @@ html {
                 top:0;
                 height: 20px;
                 display: block;
-                background: url(./image/sprite.svg) no-repeat;
+                background: url(./image/sprite2.svg) no-repeat;
                     background-position: -138px -67px;
                 background-size: 400px auto;
             }
@@ -527,7 +527,7 @@ html {
                 position: absolute;
                 left: 0;
                 top: 6px;
-                background: url(./image/sprite.svg) no-repeat;
+                background: url(./image/sprite2.svg) no-repeat;
             }
         }
     }
@@ -559,7 +559,7 @@ html {
                 display: block;
                 width: 34px;
                 height: 34px;
-                background: url(./image/sprite.svg) no-repeat;
+                background: url(./image/sprite2.svg) no-repeat;
                 background-position: -24px -208px;
                 background-size: 400px auto;
                 &.n_footer__social--fb {
@@ -599,7 +599,7 @@ html {
             display: block;
             width: 20px;
             height: 20px;
-            background: url(./image/sprite.svg) no-repeat;
+            background: url(./image/sprite2.svg) no-repeat;
             background-position: -181px -66px;
             background-size: 400px auto;
             content: "";
@@ -638,7 +638,7 @@ html {
             text-indent: -99999999999px;
             border: none;
             outline: none;
-            background: url(./image/sprite.svg) no-repeat;
+            background: url(./image/sprite2.svg) no-repeat;
             background-position: -111px -147px;
             background-size: 400px auto;
             content: "";
